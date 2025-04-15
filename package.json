@@ -1,0 +1,42 @@
+{
+  "name": "tether-wrk-ork-base",
+  "version": "0.1.0",
+  "description": "A base orchestrator class extending from `tether-wrk-ork`",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "author": {
+    "name": "prdn",
+    "email": "paolo@bitfinex.com"
+  },
+  "maintainers": [
+    {
+      "name": "prdn",
+      "email": "paolo@bitfinex.com"
+    }
+  ],
+  "keywords": [
+    "tether",
+    "wrk",
+    "ork",
+    "base"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "3.2.6",
+    "bfx-svc-boot-js": "git+https://github.com/bitfinexcom/bfx-svc-boot-js.git",
+    "tether-wrk-base": "git+https://github.com/tetherto/tether-wrk-base.git"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tetherto/tether-wrk-ork-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tetherto/tether-wrk-ork-base/issues"
+  },
+  "homepage": "https://github.com/tetherto/tether-wrk-ork-base#readme"
+}

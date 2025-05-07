@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "brittle": "3.7.0",
-    "sinon": "^20.0.0",
+    "sinon": "20.0.0",
     "standard": "17.1.0",
     "test-tmp": "1.4.0"
   },

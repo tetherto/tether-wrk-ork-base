@@ -4,7 +4,10 @@
   "description": "A base orchestrator class extending from `tether-wrk-ork`",
   "scripts": {
     "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "test": "brittle tests/{,**/}*.test.js",
+    "test:coverage": "brittle --coverage tests/{,**/}*.test.js",
+    "posttest": "npm run lint"
   },
   "author": {
     "name": "prdn",
@@ -29,7 +32,10 @@
     "tether-wrk-base": "git+https://github.com/tetherto/tether-wrk-base.git"
   },
   "devDependencies": {
-    "standard": "17.1.0"
+    "brittle": "3.7.0",
+    "sinon": "^20.0.0",
+    "standard": "17.1.0",
+    "test-tmp": "1.4.0"
   },
   "repository": {
     "type": "git",

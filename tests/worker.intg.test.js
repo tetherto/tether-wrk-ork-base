@@ -69,23 +69,19 @@ test('tailLog test', async function (t) {
 
   // Stub the jRequest method
   const jReqStub = sinon.stub(wrk.net_r0, 'jRequest')
-
-  // Define the behavior of the stub
-  jReqStub.withArgs('rpc-pub-key-1', 'tailLog', sinon.match.any, sinon.match.any).resolves([
+  const logs = [
     { ts: 1, log: 'Log entry 1 from rack1' },
     { ts: 2, log: 'Log entry 2 from rack1' }
-  ])
+  ]
+
+  // Define the behavior of the stub
+  jReqStub.withArgs('rpc-pub-key-1', 'tailLog', sinon.match.any, sinon.match.any).resolves(logs)
 
   const res = await rpcReq(pubKey, 'tailLog', {
     type: 'server'
   })
 
-  const expRes = [
-    { ts: 1, log: 'Log entry 1 from rack1' },
-    { ts: 2, log: 'Log entry 2 from rack1' }
-  ]
-
-  t.alike(res, expRes)
+  t.alike(res, logs)
 })
 
 test('forgetRacks test', async function (t) {

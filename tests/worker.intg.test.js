@@ -40,7 +40,6 @@ test('ping test', async function (t) {
   const pubKey = wrk.getRpcKey()
 
   const res = await rpcReq(pubKey, 'ping', 'hello world')
-  console.log(res)
   t.is(res, 'hello world')
 })
 

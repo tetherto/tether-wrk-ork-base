@@ -25,7 +25,7 @@ hook('setup hook', async function (t) {
     {},
     {
       env: 'test',
-      temp_dir: path.resolve(dir, '.'),
+      tmpdir: path.resolve(dir, '.'),
       root: path.resolve(__dirname, '..'),
       wtype: 'tether-wrk-ork-base',
       cluster: 1

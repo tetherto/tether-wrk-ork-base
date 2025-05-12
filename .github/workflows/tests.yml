@@ -1,0 +1,31 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    types: [ "opened", "reopened", "synchronize" ]
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.x
+    - name: Configure npm for GitHub Packages
+      run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT_TOKEN }}" > ~/.npmrc
+    - name: Configure Git for GitHub Packages
+      run: git config --global url."https://${{ secrets.PAT_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/" 
+    - name: Install Dependencies
+      run: npm install
+    - name: Run Setup Script
+      run: ./setup-config.sh
+    - name: Run Tests
+      run: npm test

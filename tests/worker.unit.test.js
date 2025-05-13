@@ -1,3 +1,5 @@
+'use strict'
+
 const test = require('brittle')
 const sinon = require('sinon')
 const WrkProcAggr = require('../workers/aggr.proc.ork.tpl.js')

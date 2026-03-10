@@ -42,6 +42,8 @@ class WrkProcAggr extends WrkBase {
       throw new Error('ERR_RACK_INFO_RPC_PUBKEY_INVALID')
     }
 
+    await this._registerRackHook0(req)
+
     await this.racks.put(
       req.id,
       req
@@ -173,6 +175,10 @@ class WrkProcAggr extends WrkBase {
         })
       }
     ], cb)
+  }
+
+  async _registerRackHook0 (req) {
+    // no-op
   }
 }
 

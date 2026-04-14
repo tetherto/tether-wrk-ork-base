@@ -2,6 +2,7 @@
 
 const async = require('async')
 const WrkBase = require('tether-wrk-base/workers/base.wrk.tether')
+const crypto = require('crypto')
 
 class WrkProcAggr extends WrkBase {
   constructor (conf, ctx) {
@@ -28,9 +29,7 @@ class WrkProcAggr extends WrkBase {
   }
 
   async registerRack (req) {
-    if (!req.id) {
-      throw new Error('ERR_RACK_ID_INVALID')
-    }
+    req.id ||= crypto.randomUUID()
 
     if (!req.type) {
       throw new Error('ERR_RACK_TYPE_INVALID')

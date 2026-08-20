@@ -1,7 +1,7 @@
 'use strict'
 
 const async = require('async')
-const WrkBase = require('tether-wrk-base/workers/base.wrk.tether')
+const WrkBase = require('@tetherto/tether-wrk-base/workers/base.wrk.tether')
 
 class WrkProcAggr extends WrkBase {
   constructor (conf, ctx) {

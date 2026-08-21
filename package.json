@@ -44,5 +44,9 @@
   "bugs": {
     "url": "https://github.com/tetherto/tether-wrk-ork-base/issues"
   },
-  "homepage": "https://github.com/tetherto/tether-wrk-ork-base#readme"
+  "homepage": "https://github.com/tetherto/tether-wrk-ork-base#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

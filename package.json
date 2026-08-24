@@ -1,6 +1,6 @@
 {
   "name": "@tetherto/tether-wrk-ork-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A base orchestrator class extending from `tether-wrk-ork`",
   "scripts": {
     "lint": "standard",

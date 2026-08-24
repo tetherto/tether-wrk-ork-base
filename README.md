@@ -88,12 +88,8 @@ In the future, if you need to add a facility, include the facility code in the b
 
     ```json
     {
-      "r0": {
-        "allow": [],
-        "allowLocal": true
-      }
+      "r0": {}
     }
     ```
 
-  - **`allow`**: An array used as an allowlist to validate incoming connections based on their `remotePublicKey`.
-  - **`allowLocal`**: If set to `true`, it allows connections originating from the local IP address.
+  - **`allow`**: An optional array used as an allowlist to validate incoming connections based on their `remotePublicKey`. When omitted, all peers are accepted. When set, only listed keys are accepted.
